@@ -10,5 +10,5 @@ for i, num in enumerate(range(9, -1, -1), 1):
     if i%3 == 0:
         r += 1
         c = 0
-
+#e
 root.mainloop()
