@@ -52,11 +52,11 @@ for i, num in enumerate(numbers, 1):
         r += 1
         c = 0
 
-warubtn = tk.Button(root, text=f"÷", font=("Times New Roman", 30), width=4, height=1)
+warubtn = tk.Button(root, text=f"/", font=("Times New Roman", 30), width=4, height=1)
 warubtn.bind("<1>", click_number)
 warubtn.grid(row=r-3, column=c+2)
 
-kakebtn = tk.Button(root, text=f"×", font=("Times New Roman", 30), width=4, height=1)
+kakebtn = tk.Button(root, text=f"*", font=("Times New Roman", 30), width=4, height=1)
 kakebtn.bind("<1>", click_number)
 kakebtn.grid(row=r-2, column=c+2)
 
