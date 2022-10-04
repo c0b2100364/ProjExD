@@ -1,6 +1,5 @@
 import tkinter as tk
 import tkinter.messagebox as tkm
-from turtle import clear
 
 def click_alclear(event):
     entry.delete(0, tk.END)
