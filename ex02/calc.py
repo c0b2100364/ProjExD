@@ -36,5 +36,4 @@ for i, num in enumerate(numbers+operators, 1):
 btn = tk.Button(root, text=f"=", font=("", 30), width=4, height=2)
 btn.bind("<1>", click_equal)
 btn.grid(row=r, column=c)
-
 root.mainloop()
