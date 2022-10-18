@@ -1,5 +1,6 @@
 import tkinter as tk
 import maze_maker as mm
+import tkinter.messagebox as tkm
 
 def key_down(event):
     global key
@@ -10,6 +11,10 @@ def key_up(event):
     global key
     key = ""
 
+def go(event):
+    key = event.keysym
+    tkm.showinfo("おめ")
+    root.destroy()
 
 def main_proc():
     global mx, my
@@ -31,12 +36,10 @@ def main_proc():
             my += 1
         if key == "Down" and key == "Right":
             my -= 1
-<<<<<<< HEAD
-=======
     
     if mx == 13 and my == 7:
         mx, my =1, 1
->>>>>>> add_func
+        root.bind("<KeyPress>", go)
 
 
     canv.coords("tori", cx, cy)
@@ -52,12 +55,7 @@ if __name__ == "__main__":
     maze_lst = mm.make_maze(15, 9)
     #print(maze_lst)
     
-<<<<<<< HEAD
-=======
-    #sta = tk.Label(root, text="スタート", fg = "red")
-    #sta.place(x=150, y=150)
 
->>>>>>> add_func
     mm.show_maze(canv, maze_lst)  
 
     tori = tk.PhotoImage(file="fig/3.png")
@@ -65,10 +63,6 @@ if __name__ == "__main__":
     cx, cy = mx*100+50, my*100+50
     canv.create_image(cx, cy, image=tori, tag="tori")
 
-<<<<<<< HEAD
-    key =""
-
-=======
     
     sta = tk.Label(root, text="スタート", fg = "red", font=("", 20))
     sta.place(x=105, y=130)
@@ -80,7 +74,6 @@ if __name__ == "__main__":
 
 
 
->>>>>>> add_func
     root.bind("<KeyPress>", key_down)
     root.bind("<KeyRelease>", key_up)
 
