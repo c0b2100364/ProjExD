@@ -27,14 +27,10 @@ def main_proc():
     if maze_lst[my][mx] == 0:
         cx, cy = mx*100+50, my*100+50
     else:
-        if key =="Up":
+        if key =="Up" and key == "Left":
             my += 1
-        if key == "Down":
+        if key == "Down" and key == "Right":
             my -= 1
-        if key == "Left":
-            mx += 1
-        if key == "Right":
-            mx -= 1
 
 
     canv.coords("tori", cx, cy)
@@ -52,7 +48,7 @@ if __name__ == "__main__":
     
     mm.show_maze(canv, maze_lst)  
 
-    tori = tk.PhotoImage(file="fig/7.png")
+    tori = tk.PhotoImage(file="fig/3.png")
     mx, my = 1, 1
     cx, cy = mx*100+50, my*100+50
     canv.create_image(cx, cy, image=tori, tag="tori")
