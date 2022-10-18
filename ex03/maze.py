@@ -31,6 +31,12 @@ def main_proc():
             my += 1
         if key == "Down" and key == "Right":
             my -= 1
+<<<<<<< HEAD
+=======
+    
+    if mx == 13 and my == 7:
+        mx, my =1, 1
+>>>>>>> add_func
 
 
     canv.coords("tori", cx, cy)
@@ -46,6 +52,12 @@ if __name__ == "__main__":
     maze_lst = mm.make_maze(15, 9)
     #print(maze_lst)
     
+<<<<<<< HEAD
+=======
+    #sta = tk.Label(root, text="スタート", fg = "red")
+    #sta.place(x=150, y=150)
+
+>>>>>>> add_func
     mm.show_maze(canv, maze_lst)  
 
     tori = tk.PhotoImage(file="fig/3.png")
@@ -53,8 +65,22 @@ if __name__ == "__main__":
     cx, cy = mx*100+50, my*100+50
     canv.create_image(cx, cy, image=tori, tag="tori")
 
+<<<<<<< HEAD
     key =""
 
+=======
+    
+    sta = tk.Label(root, text="スタート", fg = "red", font=("", 20))
+    sta.place(x=105, y=130)
+
+    gol = tk.Label(root, text = "ゴール", fg = "yellow", font = ("", 20))
+    gol.place(x=1310, y=735)
+
+    key =""
+
+
+
+>>>>>>> add_func
     root.bind("<KeyPress>", key_down)
     root.bind("<KeyRelease>", key_up)
 
