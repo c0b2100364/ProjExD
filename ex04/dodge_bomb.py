@@ -50,7 +50,7 @@ def main():
 
     # 練習6
     vx, vy = 1, 1
-    vx2, vy2 = 1, 1
+    vx_blue, vy_blue = 1, 1
 
     clock = pg.time.Clock()
     
@@ -109,10 +109,10 @@ def main():
         vy *= tate
 
         yoko2, tate2 = check_bound2(bomb2_rct, scrn_rct)
-        vx2 *= 1.0001
-        vy2 *= 1.0001
-        vx2 *= yoko2
-        vy2 *= tate2
+        vx_blue *= 1.0001
+        vy_blue *= 1.0001
+        vx_blue *= yoko2
+        vy_blue *= tate2
 
 
         bomb_rct.move_ip(vx, vy) # 練習6
@@ -125,10 +125,6 @@ def main():
         # scrn_sfc.blit(txt, (300, 200))
         # 練習8
         if tori_rct.colliderect(bomb_rct):
-            pg.time.wait(1000)
-            fonto = pg.font.Font(None, 80)
-            txt = fonto.render("MISSION FAILED", True, (0, 0, 0))
-            scrn_sfc.blit(txt, (300, 200))
             return
             # fonto = pg.font.Font(None, 80)
             # txt = fonto.render("あ", True, (0, 0, 0))
