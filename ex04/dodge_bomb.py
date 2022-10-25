@@ -82,6 +82,11 @@ def main():
         bomb_rct.move_ip(vx, vy) # 練習6
         scrn_sfc.blit(bomb_sfc, bomb_rct) # 練習5
 
+
+        # 練習8
+        if tori_rct.colliderect(bomb_rct):
+            return
+
         pg.display.update()
 
         clock.tick(1000)
