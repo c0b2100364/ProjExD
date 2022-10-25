@@ -1,5 +1,6 @@
 import tkinter as tk
 import maze_maker as mm
+import tkinter.messagebox as tkm
 
 def key_down(event):
     global key
@@ -10,6 +11,10 @@ def key_up(event):
     global key
     key = ""
 
+def go(event):
+    key = event.keysym
+    tkm.showinfo("おめ")
+    root.destroy()
 
 def main_proc():
     global mx, my
@@ -34,6 +39,7 @@ def main_proc():
     
     if mx == 13 and my == 7:
         mx, my =1, 1
+        root.bind("<KeyPress>", go)
 
 
     canv.coords("tori", cx, cy)
@@ -49,8 +55,6 @@ if __name__ == "__main__":
     maze_lst = mm.make_maze(15, 9)
     #print(maze_lst)
     
-    #sta = tk.Label(root, text="スタート", fg = "red")
-    #sta.place(x=150, y=150)
 
     mm.show_maze(canv, maze_lst)  
 
