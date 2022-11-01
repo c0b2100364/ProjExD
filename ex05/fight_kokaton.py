@@ -81,10 +81,12 @@ class Kao:
 
     def update(self, scr:Screen):
         self.rct.move_ip(self.vx2, self.vy2) 
-        #yoko, tate = check_bound(self.rct, scr.rct)
-        self.vx2 *= 0.001
-        self.vy2 *= 0.001
+        yoko, tate = check_bound(self.rct, scr.rct)
+        self.vx2 *= yoko
+        self.vy2 *= tate
         self.blit(scr)
+
+
 
 
 
@@ -131,7 +133,7 @@ def main():
     bkd = Bomb((255, 0, 0), 10, (+1, +1), scr)
 
 
-    kao = Kao("fig/asprite.bmp", 3.0, (+1, +1), scr)
+    kao = Kao("fig/asprite.bmp", 4.0, (+1, +1), scr)
 
     clock = pg.time.Clock() # 練習1
     while True:
@@ -166,10 +168,16 @@ def main():
 
         kao.update(scr)
 
+        
+
         # 練習8
         if kkt.rct.colliderect(bkd.rct): # こうかとんrctが爆弾rctと重なったら
             return
 
+
+        if kkt.rct.colliderect(kao.rct):
+            return
+        
         pg.display.update() #練習2
         clock.tick(1000)
 
