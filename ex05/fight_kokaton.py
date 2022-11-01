@@ -67,7 +67,7 @@ class Bomb:
         self.blit(scr)
 
 
-class Kao:
+class Kao:# 追加クラス
     def __init__(self, gazo, zoom, v2xy, scr:Screen):
         sfc = pg.image.load(gazo)
         self.sfc = pg.transform.rotozoom(sfc, 0, zoom)
@@ -112,11 +112,11 @@ def main():
 
     kao = Kao("fig/asprite.bmp", 4.0, (+1, +1), scr)
 
-    clock = pg.time.Clock() # 練習1
+    clock = pg.time.Clock() 
     while True:
         scr.blit()
         
-        for event in pg.event.get(): # 練習2
+        for event in pg.event.get(): 
             if event.type == pg.QUIT:
                 return
 
@@ -134,7 +134,7 @@ def main():
         if kkt.rct.colliderect(kao.rct):
             return
         
-        pg.display.update() #練習2
+        pg.display.update() 
         clock.tick(1000)
 
 
